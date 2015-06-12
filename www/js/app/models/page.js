@@ -6,7 +6,7 @@ App.Model.PageModel = Backbone.Model.extend({
 
 App.models.introPage = new App.Model.PageModel({
   title: 'Welcome',
-  header: 'Red Hat Mobile Bank',
+  header: 'Red Hat Bank',
   text: 'A demo banking app built on FeedHenry',
   nextButtonText: 'Let\'s Start',
   menuItems: [{className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Cloud Action', menuSubTitle: 'Try it now', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'cloud'},
