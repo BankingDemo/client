@@ -1,0 +1,213 @@
+<!-- Based on the HTML5 Mobile Boilerplate -->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="">
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/effeckt.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/app.css">
+
+        <script src="js/libs/feedhenry/feedhenry.js" type="text/javascript"></script>
+    </head>
+    <body>
+
+        <script src="js/libs/mbp/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/libs/mbp/helper.js"></script>
+        <script src="js/libs/mbp/plugins.js"></script>
+        <script src="js/libs/mbp/effeckt.js"></script>
+        <script src="js/libs/jquery/jquery.js"></script>
+        <script src="js/libs/underscore/underscore.js"></script>
+        <script src="js/libs/handlebars/handlebars.js"></script>
+        <script src="js/libs/backbone/backbone.js"></script>
+        <script src="js/libs/bootstrap/js/bootstrap.js"></script>
+
+        <script src="js/app/namespace.js"></script>
+        <script src="js/app/templates.js"></script>
+        <script src="js/app/routers/index.js"></script>
+        <script src="js/app/models/page.js"></script>
+        <script src="js/app/views/navbar.view.js"></script>
+        <script src="js/app/views/intro.view.js"></script>
+        <script src="js/app/views/viewbase.view.js"></script>
+        <script src="js/app/views/main.view.js"></script>
+        <script src="js/app/views/cloudcall.view.js"></script>
+        <script src="js/app/views/stats.view.js"></script>
+        <script src="js/app/views/nodepage.view.js"></script>
+        <script src="js/app/views/databrowser.view.js"></script>
+        <script src="js/app/views/weather.view.js"></script>
+        <script src="js/app/views/integration.view.js"></script>
+        <script src="js/app/init.js"></script>
+
+         <script id="cloudcall" type="text/x-handlebars-template">
+            <div class="content_view">
+              <div class="container">
+                <h1>{{header}}</h1>
+                <p>{{text}}</p>
+                <p><a class="btn btn-primary btn-lg cloud-action-button"><i class="icon-external-link-sign"></i> {{buttonText}}</a></p>
+                <p class="response_content alert"></p>
+                <p class="extra_response hidden">
+                  {{extraRes}}
+                </p>
+              </div>
+            </div>
+        </script>
+
+        <script id="databrowser" type="text/x-handlebars-template">
+            <div class="content_view">
+              <div class="container">
+                <h1>{{header}}</h1>
+                <p>{{text}}</p>
+                <form>
+                  <div class="form-group">
+                    <label class="sr-only" for="nameField">{{inputFieldLabel}}</label>
+                    <input type="text" class="form-control" id="nameField" placeholder="{{inputFieldLabel}}">
+                  </div>
+                </form>
+                <p class="alert alert-danger hidden"></p>
+                <p><a class="btn btn-primary btn-lg save-data"><i class="icon-save"></i> {{buttonText}}</a></p>
+                <p class="response_content alert"></p>
+                <p class="extra_response hidden">
+                  {{extraRes}}
+                </p>
+              </div>
+            </div>
+        </script>
+        <script id="integration" type="text/x-handlebars-template">
+            <div class="content_view">
+              <div class="container cloud_integration">
+                <h1>{{header}}</h1>
+                <p>{{text}}</p>
+                <div class="row">
+                {{#each plugins}}
+                  <div class="col-xs-4 col-sm-3 col-md-2 plugins">
+                    <img src="img/plugins/{{this.img}}" class="img-responsive" />
+                  </div>
+                {{/each}}
+                </div>
+              </div>
+            </div>
+        </script>
+        <script id="intro" type="text/x-handlebars-template">
+           <div class="banner well center text-center">
+            <h1>{{header}}</h1>
+            <div class="fh-icon">
+            <img src="img/logo.png"/ class="bannerLogo">
+            </div>
+            <p>{{text}}</p>
+            </div>
+            <div class="row">
+              {{#each menuItems}}
+                <div class="col-xs-6 col-sm-4 {{responsiveClass}}">
+                <div class="container start-menu-item {{className}}">
+                  <a class="btn start-menu-item-icon">
+                    <i class="icon-{{iconClass}} icon-2x"></i>
+                  </a>
+                  <h5>{{menuTitle}}</h5>
+                  <h6>{{menuSubTitle}}</h6>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+        </script>
+        <script id="navbar" type="text/x-handlebars-template">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="nav pull-left">
+                <a class="btn back"><i class="icon-chevron-left icon-2x"></i></a>
+              </div>
+              <div class="navbar-title" {{#if titleWidth}}style="width: {{titleWidth}}px"{{/if}}>
+                <div class="nav navbar-text">{{title}}</div>
+              </div>
+              <div class="fh-icon"><img src="img/logo.png"/ class="logo">
+              </div>
+            </nav>
+        </script>
+        <script id="node" type="text/x-handlebars-template">
+        <div class="content_view">
+          <div class="container">
+            <h1>{{header}}</h1>
+            <img src="img/nodejs.png" class="img-responsive"/>
+            <p>{{text}}</p>
+          </div>
+        </div>
+        </script>
+        <script id="stats" type="text/x-handlebars-template">
+        <div class="content_view">
+          <div class="container">
+            <h1>{{header}}</h1>
+            <p>{{text}}</p>
+          </div>
+        </div>
+        </script>
+        <script id="weather-data" type="text/x-handlebars-template">
+          <div class="row weather-info">
+              {{#each data}}
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 {{#visibleClass @index}}{{/visibleClass}}">
+                  <div class="container">
+                    <img src="{{icon}}" class="img-circle" />
+                    <p>{{date}}</p>
+                    <p>{{low}} - {{high}} (&deg;C)</p>
+                    <p>{{desc}}</p>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+        </script>
+        <script id="weather" type="text/x-handlebars-template">
+          <div class="content_view weather_page">
+              <div class="container">
+                <h1>{{header}}</h1>
+                <p>{{geoText}}</p>
+                <p><a class="btn btn-primary btn-lg get-geo-btn"><i class="icon-location-arrow"></i> {{geoButtonText}}</a></p>
+                <form>
+                  <div class="form-group">
+                    <label class="sr-only" for="locationField">{{geoLabelText}}</label>
+                    <input type="text" class="form-control" id="locationField" placeholder="{{geoLabelText}}">
+                  </div>
+                </form>
+                <div class="hidden">
+                  <p class="get-weather-text">
+                    {{getWeatherText}}
+                  </p>
+                  <p><a class="btn btn-primary btn-lg get-weather-btn"><i class="icon-globe"></i> {{getWeatherButtonText}}</a></p>
+                </div>
+                <p class="response_content"></p>
+              </div>
+            </div>
+        </script>
+
+        <div id="main_page" class="page effeckt-page-active" data-effeckt-page="main_view_container">
+        </div>
+
+        <div id="page_view_container" data-effeckt-page="page_view_container">
+        </div>
+
+    </body>
+</html>
