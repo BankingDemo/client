@@ -1,212 +1,123 @@
-/** FeedHenry Theme **/
 
-/** Pink Theme **/
-
-/*@base-color: #F50555;
-@btn-border-color: #EB0753;
-@btn-hover-color: #DF1132;
-@base-font-color: #FFF;
-@content-font-color: #000;
-@content-header-font-color: #000;*/
-
-.body {
-  overflow: hidden;
-  background-color: #fafafa;
-}
-
-#page_view_container {
-  overflow: hidden;
-  background-color: #fafafa;
-}
-
-#main_page .row {
-  margin-right: 0;
-  margin-left: 0;
-  background-color: #fafafa;
-}
-
-.banner {
-  padding-top: 15px;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  color: #fafafa;
-  background-color: #3d3c3a;
-  border: none;
-  border-radius: 0;
-}
-
-.bannerLogo {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 31px;
-}
-
-.banner h1 {
-  width: 70%;
-  margin-top: 10px;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 160%;
-}
-
-.banner p {
-  margin-bottom: 0;
-  font-size: 110%;
-}
-
-.fh-icon {
-  float: right;
-}
-
-.logo {
-  height: 40px;
-  padding-top: 10px;
-  padding-right: 20px;
-}
-
-.start-menu-item {
+.menu-spacer {
   width: 100%;
-  height: 110px;
-  cursor: pointer;
+  height: 60px;
 }
 
-.start-menu-item h5 {
-  font-size: .9em;
-  color: #3d3c3a;
-}
+/* @font-face { */
+/*     font-family: OS-Regular; */
+/*     src: url('fonts/OpenSans-Regular.ttf'); */
+/* } */
+/* @font-face { */
+/*     font-family: OS-Light; */
+/*     src: url('fonts/OpenSans-Light.ttf'); */
+/* } */
+/* @font-face { */
+/*     font-family: OS-Bold; */
+/*     src: url('fonts/OpenSans-Bold.ttf'); */
+/* } */
 
-.start-menu-item h6 {
-  font-size: 0.8em;
-  color: #535353;
-}
+/* body { */
+/*     font-size: 12px; */
+/*     font-family: OS-Light; */
+/* } */
+/* #app { */
+/*     width: inherit; */
+/*     height: inherit; */
+/* } */
+/* #count { */
+/*     margin-top:50px; */
+/* } */
+/* header { */
+/*     position: absolute; */
+/*     top:0; */
+/*     left: 0; */
+/*     width: 100%; */
+/* } */
+/* .center > h3 { */
+/*     color: #ffffff; */
+/*     letter-spacing: 2px; */
+/*     font-family: OS-Light; */
+/*     font-size: 1.5em; */
+/* } */
+/* .center > h3 > small { */
+/*     color: #ffffff; */
+/*     letter-spacing: 2px; */
+/*     font-family: OS-Light; */
+/* } */
+/* .header-footer-bg { */
+/*     background-color: #7ea1b6; */
+/* } */
+/* footer { */
+/*     position: absolute; */
+/*     bottom:0; */
+/*     left: 0; */
+/*     width: 100%; */
+/*     height: 5%; */
+/*     color: #ffffff; */
+/* } */
+/* footer > div > small { */
+/*     padding-top: 8px; */
+/*     padding-right: 10px; */
+/* } */
+/* .left { */
+/*     float: left; */
+/* } */
+/* .right { */
+/*     float: right; */
+/* } */
+/* .clear { */
+/*     clear: both; */
+/* } */
+/* .center { */
+/*     text-align: center; */
+/* } */
 
-a.start-menu-item-icon {
-  display: block;
-  width: 55px;
-  height: 55px;
-  padding-top: 12px;
-  margin-right: auto;
-  margin-left: auto;
-  color: #fafafa;
-  text-decoration: none;
-  background-color: #1557bb;
-  border-color: #1557bb;
-  border-radius: 50%;
-}
 
-.start-menu-item-icon:hover {
-  color: #4bbfe2;
-}
+/* /* */
+/*  *  CUSTOM STYLING */
+/*  */ */
 
-.start-menu-item-icon:active {
-  color: #fafafa;
-  background-color: #4bbfe2;
-  border-color: #4bbfe2;
-}
+/* #description { */
+/*     text-align: justify; */
+/*     position: relative; */
+/*     padding-top: 40px; */
+/*     font-size: 1.5em; */
+/* } */
+/* .input-group { */
+/*     display: block; */
+/* } */
 
-.start-menu-item h5 {
-  text-transform: uppercase;
-}
+/* .cloudResponse { */
+/*     font-size: 2em; */
 
-.start-menu-item h5,
-h6 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-align: center;
-}
+/*     font-weight: bold; */
+/*     text-align: center; */
+/* } */
 
-.page_view {
-  background-color: #fafafa;
-}
+/* .say-hello-button { */
+/*     width: 100%; */
 
-.navbar {
-  margin-bottom: 0;
-  background-color: #3d3c3a;
-  border: none;
-  padding-top: 15px;
-}
+/*     margin: 5px 0px 5px 0px; */
+/*     padding: 5px 5px 5px 5px; */
+/*     font-size: 1.6em; */
+/*     background-color: #4a87ee; */
+/*     border: 1px solid #216CEC; */
+/*     color: #fff; */
+/* } */
 
-.navbar-default .navbar-text {
-  color: #fafafa;
-}
+/* .input-text{ */
+/*     width: 100%; */
 
-.navbar .btn.back {
-  width: 75px;
-  height: 50px;
-  padding-top: 10px;
-  color: #fafafa;
-}
+/*     font-size: 2em; */
+/*     margin: 0px; */
+/*     padding: 0px 0px 0px 5px; */
+/*     border: 1px solid #000000; */
+/*     box-sizing: border-box; */
+/* } */
 
-.navbar-title {
-  width: 100px;
-  margin-right: auto;
-  margin-left: auto;
-}
+/* .input-div { */
+/*     width: 100%; */
 
-.content_view {
-  padding: 15px;
-  text-align: center;
-  background-color: #fafafa;
-}
-
-.content_view h1 {
-  color: #3d3c3a;
-}
-
-.content_view p {
-  color: #535353;
-  text-align: justify;
-}
-
-.content_view .btn {
-  display: block;
-}
-
-.btn-primary {
-  background-color: #1557bb;
-  border-color: #1557bb;
-}
-
-.btn-primary:hover {
-  background-color: #4bbfe2;
-  border-color: #4bbfe2;
-}
-
-.weather-info p {
-  margin-bottom: 0;
-}
-
-.weather-info img {
-  margin-bottom: 5px;
-}
-
-.cloud_integration .plugins {
-  height: 110px;
-}
-
-/* Override Effeckt Animation speed */
-
-[data-effeckt-page].slide-from-left {
-  -webkit-animation: slideFromLeft 10ms forwards ease-in-out;
-       -o-animation: slideFromLeft 10ms forwards ease-in-out;
-          animation: slideFromLeft 10ms forwards ease-in-out;
-}
-
-[data-effeckt-page].slide-to-left {
-  -webkit-animation: slideToLeft 10ms forwards ease-in-out;
-       -o-animation: slideToLeft 10ms forwards ease-in-out;
-          animation: slideToLeft 10ms forwards ease-in-out;
-}
-
-[data-effeckt-page].slide-from-right {
-  -webkit-animation: slideFromRight 10ms forwards ease-in-out;
-       -o-animation: slideFromRight 10ms forwards ease-in-out;
-          animation: slideFromRight 10ms forwards ease-in-out;
-}
-
-[data-effeckt-page].slide-to-right {
-  -webkit-animation: slideToRight 10ms forwards ease-in-out;
-       -o-animation: slideToRight 10ms forwards ease-in-out;
-          animation: slideToRight 10ms forwards ease-in-out;
-}
+/*     padding: 5px 0px 5px 0px; */
+/* } */
