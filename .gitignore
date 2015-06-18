@@ -1,25 +1,45 @@
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-lib-cov
-lcov.info
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+# IntelliJ IDEA #
+.idea/
+*.iml
 
-pids
-logs
-results
-build
-.grunt
+#NodeJS
 
-node_modules
+node_modules/
+
+# Eclipse Files #
+.metadata
+.settings
+.project
+.classpath
+RemoteSystemsTempFiles
+
+# General Java Folders #
+bin/
+target/
+logs/
+
+# Java Package Files #
+*.jar
+*.class
+
+# General #
+tmp/
+*.tmp
+
+_error
+
+### Java template
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
 
