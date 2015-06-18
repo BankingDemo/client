@@ -28,13 +28,14 @@
             <div data-role="content" align="center">
 
                 <form action="application.html" method="get">
-                    <div align="center" style="width: 20%">
-                        <p>Enter your login credentials</p>
+                    <div data-role="fieldcontain">
+                        <label for="username">Enter your login credentials</label>
                     
-                        <p><input type="text" name="username" data-inline="true"  align="center" maxlength="20" style="width: 20%"/> </p>
-                        <p><input type="submit" data-inline="true" title="Login"  value="Login"></p>
+                        <input type="text" id="username" name="username"/>
                     </div>
-
+                    <div data-role="fieldcontain">
+                        <input type="submit" title="Login" value="Login"/>
+                    </div>
                 </form>
             </div>
 

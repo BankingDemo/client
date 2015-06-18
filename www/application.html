@@ -13,14 +13,6 @@
 <body>
 
 	<div data-role="page" id="home">
-		<script type="text/javascript">
-			$("#home").bind("pageshow", function(event){
-				var url = $.url(document.location);
-				var username = url.param("username");
-				$("#span1").html("<b>Welcome " + arg1 +
-						"to Red Hat Bank Application</b><br/> ");
-			});
-		</script>
 			<div data-role="header">
 				<p align="center">A demo banking app built on FeedHenry</p>
 			</div>
@@ -52,7 +44,14 @@
 		</div>
 		
 		<div data-role="content" class="content">
-			<span id="span1"></span>
+			Welcome #form[username]# to the app.
+			<cfloop item="field" collection="#form#">
+				<cfoutput>
+					<p>
+						The form field #field# has the value #form[field]#.
+					</p>
+				</cfoutput>
+			</cfloop>
 		</div>
 	</div>
 
