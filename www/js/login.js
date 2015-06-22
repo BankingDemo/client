@@ -11,7 +11,7 @@ function doLogin() {
         },
         function (res) {
             
-            if (res.msg = ''){
+            if (res.msg = '[]'){
               document.getElementById('loggedInResponse').innerHTML = "<p>No user found!</p>";
             } else{
               document.getElementById('loggedInResponse').innerHTML = "<p>" + res.msg.username+  " user found!</p>";
