@@ -22,5 +22,5 @@ function doLogin() {
         function (code, errorprops, params) {
             alert('An error occured: ' + code + ' : ' + errorprops);
         }
-    );*/
+    );
 };
