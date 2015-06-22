@@ -21,11 +21,13 @@
 	    </div>
 	
 	    <div data-role="fieldcontain">
+	    
 	        <label for="username">Username</label>
 	        <input type="text" id="username" required placeholder="Enter your username"/>
 	        <label for="password">Password</label>
-	        <input type="password" id="password" required />
-	        <button id="login_button" onclick="doLogin();" data-icon="check" data-iconpos="right" data-inline="true">Login</button>
+	        <input type="password" id="password"/>
+	        <button type="submit" id="login_button" onclick="doLogin();" data-icon="check" data-iconpos="right" data-inline="true">Login</button>
+	    
 	        <div id="loggedInResponse"></div>
 	    </div>
 	
@@ -121,7 +123,27 @@
 	    </div>
 	    <div data-role="content">
 	        <h2>User Profile</h2>
-	        <p>Show all settings here...</p>
+	        <p>All your settings are found below:</p>
+	        
+	        <div data-role="fieldcontain">
+		        <label for="firstname">First Name</label>
+		        <input type="text" id="firstname" required placeholder="Enter your First Name"/>
+		        <label for="surname">Surname</label>
+		        <input type="text" id="surname" required placeholder="Enter your Surname"/>
+		        <label for="address">Address</label>
+		        <input type="text" id="address" required placeholder="Enter your Address"/>
+		        <label for="surname">Email</label>
+		        <input type="text" id="email" required placeholder="Enter your email"/>
+		        <button id="savechanges_button" onclick="saveChanges();" data-icon="check" data-iconpos="right" data-inline="true">Save changes</button>
+		        
+	    	</div>
+	    	<div>
+	    		<p>For changes to your username, please contact us at 0800 RED HAT0
+	    		<div>
+	    			<label for="username">Username</label> <span id="username">%username%</span>
+	    		</div>
+	    	</div>
+	        
 	    </div>
 	</div>
 	
