@@ -1,6 +1,8 @@
-document.getElementById('login_button').onclick = function () {
-    document.getElementById('loggedInResponse').innerHTML = "<p>Logging in...</p>";
-    $fh.cloud(
+function doLogin() {
+	var username = document.getElementById('username').value;
+    document.getElementById('loggedInResponse').innerHTML = "<p>Logging you in " + username + "...</p>";
+    window.location.replace('#home');
+/*    $fh.cloud(
         {
             path: 'hello',
             data: {
@@ -13,5 +15,5 @@ document.getElementById('login_button').onclick = function () {
         function (code, errorprops, params) {
             alert('An error occured: ' + code + ' : ' + errorprops);
         }
-    );
+    );*/
 };
