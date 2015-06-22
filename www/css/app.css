@@ -8,23 +8,31 @@
 	background-color: #A30000;
 }
 
-/* @font-face { */
-/*     font-family: OS-Regular; */
-/*     src: url('fonts/OpenSans-Regular.ttf'); */
-/* } */
-/* @font-face { */
-/*     font-family: OS-Light; */
-/*     src: url('fonts/OpenSans-Light.ttf'); */
-/* } */
-/* @font-face { */
-/*     font-family: OS-Bold; */
-/*     src: url('fonts/OpenSans-Bold.ttf'); */
-/* } */
+@font-face {
+    font-family: Overpass-Regular;
+    src: url('fonts/overpass_regular-webfont.ttf');
+}
+@font-face {
+    font-family: Overpass-Light;
+    src: url('fonts/overpass_light-webfont.ttf');
+}
+@font-face {
+    font-family: Overpass-Bold;
+    src: url('fonts/overpass_bold-webfont.ttf');
+}
 
-/* body { */
-/*     font-size: 12px; */
-/*     font-family: OS-Light; */
-/* } */
+* {
+    font-size: 12px;
+    font-family: Overpass-Light;
+}
+
+h1, h2, h3, h4 {
+	font-family: Overpass-Normal;
+}
+
+h4 {
+	font-size: 14px;
+}
 /* #app { */
 /*     width: inherit; */
 /*     height: inherit; */
