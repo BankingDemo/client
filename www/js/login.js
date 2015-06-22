@@ -15,7 +15,7 @@ function doLogin() {
                 var response = res.msg;
                 alert(response);
                 document.getElementById('loggedInResponse').innerHTML = "<p>" + responseAsJson + " user found!</p>";
-                //window.location.replace('#home');
+                window.location.replace('#home');
             }
 
         },
