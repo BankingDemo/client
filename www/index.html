@@ -65,122 +65,48 @@
 	        <h4 style="text-align: center; margin-top: -5px">Red Hat Bank</h4>
 	
 	        <ul data-role="listview" data-theme="a">
-	            <li><a href="#panel-01">View</a></li>
-	            <li><a href="#presentations">Presentations</a></li>
-	            <li><a href="#speakers">Speakers </a></li>
+	            <li><a class="rh-medium-red" href="#panel-01">Transactions</a></li>
+	            <li><a href="#transfer">Transfer Money</a></li>
 	        </ul>
 	
 	        <div class="menu-spacer">
 	        </div>
 	
 	        <ul data-role="listview" data-theme="a">
-	            <li><a href="#settings">Settings</a></li>
-	            <li><a href="#info">Info</a></li>
+	            <li><a href="#settings">User Profile</a></li>
 	        </ul>
 	    </div>
 	
 	    <div data-role="header" data-position="fixed">
 	        <a href="#panel-01" class="menuIcon ico fl">menu</a>
 	        <h1 align="center">Red Hat Bank Application</h1>
-	        <a href="#search" id="button-1" data-role="button" data-icon="search" data-iconpos="notext">Search</a>
 	    </div>
 	
 	    <div data-role="content" class="content" id="loggedInInfo">
 	    </div>
 	</div>
 	
-	<div data-role="page" id="presentations">
+	<div data-role="page" id="transfer">
 	    <div class="panel left panel-01" data-role="panel" data-position="left"
 	         data-display="push" id="panel-01">
 	        <ul data-role="listview" data-theme="a">
-	            <li><a href="#home">Schedule</a></li>
-	            <li><a href="#panel-01">Presentations</a></li>
-	            <li><a href="#speakers">Speakers </a></li>
+	            <li><a href="#home">Transactions</a></li>
+	            <li><a class="rh-medium-red" href="#panel-01">Transfer Money</a></li>
 	        </ul>
 	
 	        <div class="menu-spacer">
 	        </div>
 	
 	        <ul data-role="listview" data-theme="a">
-	            <li><a href="#settings">Settings</a></li>
-	            <li><a href="#info">Info</a></li>
+	            <li><a href="#settings">User Profile</a></li>
 	        </ul>
 	    </div>
 	    <div data-role="header"  data-position="fixed">
 	        <a href="#panel-01" class="menuIcon ico fl">menu</a>
 	        <h1>Red Hat Bank</h1>
-	        <a href="#search" id="button-1" data-role="button" data-icon="search" data-iconpos="notext">Search</a>
 	    </div>
 	    <div data-role="content">
-	        <p>Show all presentations here...</p>
-	    </div>
-	</div>
-	
-	
-	<div data-role="page" id="speakers">
-	    <div class="panel left panel-01" data-role="panel" data-position="left"
-	         data-display="push" id="panel-01">
-	        <ul data-role="listview" data-theme="a">
-	            <li><a href="#home">Schedule</a></li>
-	            <li><a href="#presentations">Presentations</a></li>
-	            <li><a href="#panel-01">Speakers </a></li>
-	        </ul>
-	
-	        <div class="menu-spacer">
-	        </div>
-	
-	        <ul data-role="listview" data-theme="a">
-	            <li><a href="#settings">Settings</a></li>
-	            <li><a href="#info">Info</a></li>
-	        </ul>
-	    </div>
-	    <div data-role="header"  data-position="fixed">
-	        <a href="#panel-01" class="menuIcon ico fl">menu</a>
-	        <h1>Red Hat Event</h1>
-	        <a href="#search" id="button-1" data-role="button" data-icon="search" data-iconpos="notext">Search</a>
-	    </div>
-	    <div data-role="content">
-	        <p>Show all speakers here...</p>
-	    </div>
-	</div>
-	
-	<div data-role="page" id="search">
-	    <div data-role="header"  data-position="fixed">
-	        <h1>Filter</h1>
-	    </div>
-	    <div data-role="content">
-	
-	        <fieldset data-role="controlgroup" id="radio-1" data-type="horizontal">
-	            <legend>Days</legend>
-	            <input name="radio-choice-1" id="radio-choice-1a" type="radio" value="all" checked="checked"/>
-	            <label for="radio-choice-1a">All</label>
-	            <input name="radio-choice-1" id="radio-choice-1b" type="radio" value="1"/>
-	            <label for="radio-choice-1b">Day 1</label>
-	            <input name="radio-choice-1" id="radio-choice-1c" type="radio" value="2"/>
-	            <label for="radio-choice-1c">Day 2</label>
-	            <input name="radio-choice-1" id="radio-choice-1d" type="radio" value="3"/>
-	            <label for="radio-choice-1d">Day 3</label>
-	            <input name="radio-choice-1" id="radio-choice-1e" type="radio" value="4"/>
-	            <label for="radio-choice-1e">Day 4</label>
-	            <input name="radio-choice-1" id="radio-choice-1f" type="radio" value="5"/>
-	            <label for="radio-choice-1f">Day 5</label>
-	
-	        </fieldset>
-	
-	        <fieldset data-role="controlgroup" id="checkboxes-2">
-	            <legend>Tracks</legend>
-	            <input name="checkbox-2a" id="checkbox-2a" type="checkbox" checked="checked"/>
-	            <label for="checkbox-2a">SA</label>
-	            <input name="checkbox-2b" id="checkbox-2b" type="checkbox" checked="checked"/>
-	            <label for="checkbox-2b">Sales</label>
-	            <input name="checkbox-2c" id="checkbox-2c" type="checkbox" checked="checked"/>
-	            <label for="checkbox-2c">Consulting</label>
-	        </fieldset>
-	
-	        <div data-role="footer" id="footer-1" class="ui-bar">
-	            <a href="#" data-icon="check">Toggle All</a>
-	            <a href="#home" data-role="button" data-rel="back" data-icon="back">Done</a>
-	        </div>
+	        <p>Show transfer form here...</p>
 	    </div>
 	</div>
 	
@@ -191,19 +117,8 @@
 	        <h1>Red Hat Event</h1>
 	    </div>
 	    <div data-role="content">
-	        <h2>Settings</h2>
+	        <h2>User Profile</h2>
 	        <p>Show all settings here...</p>
-	    </div>
-	</div>
-	
-	<div data-role="page" id="info" data-position="fixed">
-	    <div data-role="header">
-	        <a href="#home" data-role="button" data-rel="back" data-icon="back"
-	           data-iconpos="notext">Back</a>
-	        <h1>Info</h1>
-	    </div>
-	    <div data-role="content">
-	        <p>About this application...</p>
 	    </div>
 	</div>
 	

@@ -4,6 +4,10 @@
   height: 60px;
 }
 
+.rh-medium-red {
+	background-color: #A30000;
+}
+
 /* @font-face { */
 /*     font-family: OS-Regular; */
 /*     src: url('fonts/OpenSans-Regular.ttf'); */
