@@ -51,7 +51,9 @@
 	        		</tr>
 	        	</thead>
 	        	<tbody>
-	        		<!-- loop here over transactions -->
+	        		<tr>
+	        			<td colspan="4">LOOP OVER TRANSACTIONS HERE</td>
+	        		</tr>
 	        		<tr>
 	        			<td>10</td>
 	        			<td>20</td>
@@ -62,7 +64,7 @@
 	        </table>
 	    </div>
 	
-	    <div class="panel left panel-01" data-role="panel" data-position="left" data-display="push" id="panel-01">
+		<div class="panel left panel-01" data-role="panel" data-position="left" data-display="push" id="panel-01">
 	
 	        <h4 style="text-align: center; margin-top: -5px">Red Hat Bank</h4>
 	
@@ -111,14 +113,31 @@
 	        <h1>Red Hat Bank</h1>
 	    </div>
 	    <div data-role="content">
-	        <p>Show transfer form here...</p>
+	        <p>If you would like to make a transfer to a friend, please fill in the form below:</p>
+	        <p><label for="recipient-account">Recipient Account</label></p>
+	        <p>
+	        <table>
+	        	<tr>
+	        		<td><input type="text" disabled="disabled" value="100-452-" id="recipient-account-boilerplate" /></td>
+	        		<td><input type="number" size="2" maxlength="2" id="recipient-account" value=""/></td>
+	        	</tr>
+	        </table>
+		    <p><label for="how-much">How much do you want to transfer?</label></p>
+		    <table>
+	        	<tr>
+	        		<td><input type="number" id="how-much" maxlength="6"/></td>
+	        		<td>.</td>
+	        		<td><input type="number" id="how-much-cents" value="00"/></td>
+	        	</tr>
+	        </table>
+		    <p></p>
+		    <button type="submit" id="do_transfer" onclick="doTransfer();" data-icon="check" data-iconpos="right" data-inline="true">Transfer</button>
 	    </div>
 	</div>
 	
 	<div data-role="page" id="settings">
 	    <div data-role="header" data-position="fixed">
-	        <a href="#home" data-role="button" data-rel="back" data-icon="back"
-	           data-iconpos="notext">Back</a>
+	        <a href="#home" data-icon="home" data-iconpos="notext">Back</a>
 	        <h1>Red Hat Event</h1>
 	    </div>
 	    <div data-role="content">

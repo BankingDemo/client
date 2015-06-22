@@ -45,6 +45,31 @@ h4 {
 .ui-field-contain .ui-btn.ui-submit {
 	width: 25%;
 }
+
+.side-by-side {
+	display: inline-block;
+}
+
+#recipient-account-boilerplate {
+	size: 10; 
+	width:70px;
+}
+
+#recipient-account {
+	size: 3;
+	width: 30px;
+}
+
+#how-much-cents {
+	size: 2;
+	width: 30px;
+}
+
+#how-much {
+	size: 6;
+	width: 90px;
+}
+
 /* #app { */
 /*     width: inherit; */
 /*     height: inherit; */
