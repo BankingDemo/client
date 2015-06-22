@@ -12,9 +12,9 @@ function doLogin() {
         function (res) {
             
             if (res.msg = ''){
-              document.getElementById('loggedInInfo').innerHTML = "<p>No user found!</p>";
+              document.getElementById('loggedInResponse').innerHTML = "<p>No user found!</p>";
             } else{
-              document.getElementById('loggedInInfo').innerHTML = "<p>" + res.msg.username+  " user found!</p>";
+              document.getElementById('loggedInResponse').innerHTML = "<p>" + res.msg.username+  " user found!</p>";
             
             }
             
