@@ -4,7 +4,7 @@ function doLogin() {
     //window.location.replace('#home');
     $fh.cloud(
         {
-            path: 'cloud/login?username=' + username,
+            path: '/cloud/login?username=' + username,
             // data: {
             //     hello: document.getElementById('loggedInInfo').value
             // }
