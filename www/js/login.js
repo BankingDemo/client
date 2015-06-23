@@ -9,20 +9,24 @@ function doLogin() {
             "method": "GET"
         },
         function (res) {
-            //var response = JSON.parse(res);
-
-            //alert("JSON.stringify(res) + " + response);
-            //alert(response);
-            //alert(res);
-            if (res == '[]') {
+            if (res == '') { //res[0] = undefined
                 document.getElementById('loggedInResponse').innerHTML = "<p>No user found!</p>";
-            }else {
-                document.getElementById('loggedInResponse').innerHTML = "<p>" + res.username + " user found!</p>";
-                //window.location.replace('#home');
+            } else {
+                var username = res[0].username;
+                var firstName = res[0].firstname;
+                var address = res[0].address;
+                var surname = res[0].surname;
+                document.getElementById('loggedInUser').innerHTML = firstName + " " + surname;
+                document.getElementById('loggedInResponse').innerHTML = "<p></p>";
+                document.getElementById('firstname').value = firstName;
+                document.getElementById('surname').value = surname;
+                document.getElementById('address').value = address;
+
+                window.location.replace('#home');
             }
 
         },
-        function(msg,err) {
+        function (msg, err) {
             // An error occured during the cloud call. Alert some debugging information
             alert('Cloud call failed with error message:' + msg + '. Error properties:' + JSON.stringify(err));
         }

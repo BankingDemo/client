@@ -28,7 +28,7 @@
 	        <input type="password" id="password"/>
 	        <button type="submit" id="login_button" onclick="doLogin();" data-icon="check" data-iconpos="right" data-inline="true">Login</button>
 	    
-	        <div id="loggedInResponse" class="loggedInResponse"></div>
+	        <span id="loggedInResponse" class="loggedInResponse"></span>
 	    </div>
 	
 	    <div data-role="footer">
@@ -39,11 +39,11 @@
 	    <div data-role="header">
 	    </div>
 		<div data-role="content">
-	        <p>Welcome @user, all your transactions are loaded below:</p>
+	        <p>Welcome <span id="loggedInUser"></span> , all your transactions are loaded below:</p>
 	        <table>
 	        	<thead>
 	        		<tr>
-	<!-- 	        		<th>Date</th> -->
+	<!-- 	        	<th>Date</th> -->
 		        		<th>From ID</th>
 		        		<th>To ID</th>
 		        		<th>Amount</th>
