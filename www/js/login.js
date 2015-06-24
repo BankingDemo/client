@@ -26,7 +26,7 @@ function doLogin() {
                 document.getElementById('address').value = address;
                 document.getElementById('email').value = email;
                 document.getElementById('amount').innerHTML = amount;
-                document.getElementById('loggedUsername').innerHTML = username;
+                document.getElementById('loggedInUsername').value = username;
                 document.getElementById('loggedInUserId').value = id;
                 window.location.replace('#home');
             }
@@ -36,6 +36,7 @@ function doLogin() {
             // An error occured during the cloud call. Alert some debugging information
             alert('Cloud call failed with error message:' + msg + '. Error properties:' + JSON.stringify(err));
         }
+        
     );
 
 };
