@@ -13,7 +13,7 @@
 	    <title>Red Hat Bank</title>
 	</head>
 	<body>
-	
+	<input type="hidden" id="loggedInUserId"/>
 	<div data-role="page" id="login">
 	
 	    <div data-role="header">
@@ -21,7 +21,7 @@
 	    </div>
 	
 	    <div data-role="fieldcontain">
-	    
+
 	        <label for="username">Username</label>
 	        <input type="text" id="username" required placeholder="Enter your username"/>
 	        <label for="password">Password</label>
@@ -159,7 +159,7 @@
 	    	<div>
 	    		<p>For changes to your username, please contact us at 0800 RED HAT0
 	    		<div>
-	    			<label for="username">Username</label> <span id="username">%username%</span>
+	    			<label for="loggedUsername">Username</label> <span id="loggedUsername">%username%</span>
 	    		</div>
 	    	</div>
 	        
