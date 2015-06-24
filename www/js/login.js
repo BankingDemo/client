@@ -18,13 +18,14 @@ function doLogin() {
                 var address = res[0].address;
                 var surname = res[0].surname;
                 var email = res[0].email;
-
+                var amount = res[0].amount;
                 document.getElementById('loggedInUser').innerHTML = firstName + " " + surname;
                 document.getElementById('loggedInResponse').innerHTML = "<p></p>";
                 document.getElementById('firstname').value = firstName;
                 document.getElementById('surname').value = surname;
                 document.getElementById('address').value = address;
                 document.getElementById('email').value = email;
+                document.getElementById('amount').innerHTML = amount;
                 document.getElementById('loggedUsername').innerHTML = username;
                 document.getElementById('loggedInUserId').value = id;
                 window.location.replace('#home');
