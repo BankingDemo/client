@@ -6,7 +6,7 @@ function doTransfer() {
     var amount = +document.getElementById('how-much').value + +(document.getElementById('how-much-cents').value / 100);
 
     var payee = document.getElementById('recipient-account-boilerplate').value + toId;
-    alert("fromId:" + fromId + " toId:" + toId + " amount:" + amount + " payee:" + payee);
+    //alert("fromId:" + fromId + " toId:" + toId + " amount:" + amount + " payee:" + payee);
 
     $fh.cloud(
         {
@@ -15,11 +15,11 @@ function doTransfer() {
             "method": "GET"
         },
         function (res) {
-            if (res == '-1') {
+            if (res == '-1') { //TODO add onException clause in respective Camel route.
                 document.getElementById('transferInfo').innerHTML = "<p>The transfer could not be completed.</p>";
             } else {
                 document.getElementById('transferInfo').innerHTML = "<p>The transfer was completed successfully.</p>";
-                window.location.replace('#home');
+                doLogin();
             }
 
         },
