@@ -16,7 +16,7 @@ function doLogin() {
         },
         function (res) {
             if (res == '') { //res[0] = undefined
-                document.getElementById('loggedInResponse').innerHTML = "<p>No user found!</p>";
+                document.getElementById('loggedInResponse').innerHTML = "<p>Please check your username/password.</p>";
             } else {
                 var id = res[0].id;
                 var username = res[0].username;
