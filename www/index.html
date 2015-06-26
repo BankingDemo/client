@@ -47,9 +47,12 @@
     <div data-role="header">
     </div>
     <div data-role="content">
-        <p>Welcome <span id="loggedInUser"></span>, all your transactions are loaded below:</p>
         <table class="transactionsTable">
-            <thead>
+            <thead>            
+        	<tr>
+        		<td colspan="4">Welcome <span id="loggedInUser"></span>, all your transactions are loaded below:</td>
+        		<td><a href="javascript:var id = (document.getElementsByClassName('loggedInUserId')[0].innerHTML);loadTransactions(id);" data-icon="refresh" data-iconpos="notext">Refresh</a></td>
+        	</tr>
             <tr>
             	<th colspan="5" align="center" class="rh-medium-red balance-box">
             		Account: 100-452-<span class="loggedInUserId">$id</span></br>
@@ -148,7 +151,7 @@
             	<td colspan="3">Amount</td>
             </tr>
             <tr class="grayRow">
-            	<td style="font-size: 24px;">&pound;</td>
+            	<td style="font-size: 24px;" align="center">&pound;</td>
             	<td><input type="number" id="how-much" maxlength="6"/></td>
                 <td><input type="number" id="how-much-cents" value="00"/></td>
             </tr>

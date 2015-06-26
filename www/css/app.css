@@ -102,6 +102,10 @@ input::-webkit-inner-spin-button {
 	background-color: lightgray;
 }
 
+.transactionsTable thead tr:nth-child(1), .transactionsTable thead tr:nth-child(3) {
+	background-color: transparent;
+}
+
 /* #app { */
 /*     width: inherit; */
 /*     height: inherit; */
