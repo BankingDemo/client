@@ -51,7 +51,7 @@
             <thead>            
         	<tr>
         		<td colspan="4">Welcome <span id="loggedInUser"></span>, all your transactions are loaded below:</td>
-        		<td><a href="javascript:var id = (document.getElementsByClassName('loggedInUserId')[0].innerHTML);loadTransactions(id);" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh</a></td>
+        		<td align="center"><a href="javascript:var id = (document.getElementsByClassName('loggedInUserId')[0].innerHTML);loadTransactions(id);getCurrentBalance(id);" data-role="button" data-icon="refresh" data-iconpos="notext">Refresh</a></td>
         	</tr>
             <tr>
             	<th colspan="5" align="center" class="rh-medium-red balance-box">

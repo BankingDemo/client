@@ -5,6 +5,31 @@ function fillRepeatedFields(elementClassName, valueToFill) {
      }
 }
 
+function getCurrentBalance(id) {
+	//getTransactions for loggedIn user
+    $fh.cloud(
+        {
+            "path": '/cloud/getBackendData?method=get&id=' + id + '&restpath=getcurrentbalance',
+            "contentType": "application/json",
+            "method": "GET"
+        },
+        function (getBalRes) {
+            if (getBalRes != '-1' && getBalRes != null) {
+            	var currentBalance = 0;
+            	alert(JSON.stringify(getBalRes));
+                $.each(getBalRes, function (idx, balance) {
+                	currentBalance = balance.amount;
+                });
+            	fillRepeatedFields('amount', currentBalance);
+            }
+        },
+        function (getBalMsg, getBalErr) {
+            // An error occured during the cloud call. Alert some debugging information
+            alert('Cloud call failed with error message:' + getBalMsg + '. Error properties:' + JSON.stringify(getBalErr));
+        }
+    );
+}
+
 function loadTransactions(id) {
 	//getTransactions for loggedIn user
     $fh.cloud(
