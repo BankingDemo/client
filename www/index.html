@@ -22,14 +22,19 @@
         <h1 align="center">Red Hat Bank Application</h1>
     </div>
 
-    <div data-role="fieldcontain">
-
-        <label for="username">Username</label>
-        <input type="text" id="username" required placeholder="Enter your username"/>
-        <label for="password">Password</label>
-        <input type="password" id="password"/>
-        <button type="submit" id="login_button" onclick="doLogin();" data-icon="check" data-iconpos="right" data-inline="true">Login
-        </button>
+    <table>
+    	<tr>
+    		<td><label for="username">Username</label></td>
+        	<td><input type="text" id="username" required placeholder="Enter your username"/></td>
+        </tr>
+        <tr>
+        	<td><label for="password">Password</label></td>
+        	<td><input type="password" id="password"/></td>
+        </tr>
+        <tr><td>
+        	<input type="submit" id="login_button" onclick="doLogin();" value="Log In" data-icon="check" data-iconpos="right" data-inline="true">
+        </td></tr>
+    </table>
 
         <span id="loggedInResponse" class="loggedInResponse"></span>
     </div>

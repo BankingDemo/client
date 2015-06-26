@@ -102,10 +102,6 @@ input::-webkit-inner-spin-button {
 	background-color: lightgray;
 }
 
-.transactionsTable tr:nth-child(0), tr:nth-child(1) {
-	background-color: white;
-}
-
 /* #app { */
 /*     width: inherit; */
 /*     height: inherit; */
