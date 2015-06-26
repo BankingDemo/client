@@ -42,16 +42,19 @@
     <div data-role="header">
     </div>
     <div data-role="content">
-        <p>Welcome <span id="loggedInUser"></span> , all your transactions are loaded below:</p>
+        <p>Welcome <span id="loggedInUser"></span>, all your transactions are loaded below:</p>
         <table>
             <thead>
             <tr>
-                <th>From ID</th>
-                <th>To ID</th>
-                <th>Payee</th>
-                <th>Amount</th>
-                <th>Details</th>
+            	<th colspan="4" align="center" class="rh-medium-red balance-box">Balance: &pound;<span class="amount">$amount</span></th>
+            </tr>
+            <tr>
                 <th>Date</th>
+                <!-- <th>From ID</th>
+                <th>To ID</th>  -->
+                <th>Payee</th>
+                <th>Details</th>
+                <th>Amount</th>
             </tr>
             </thead>
             <tbody id="transactionsList"></tbody>
@@ -78,7 +81,8 @@
     <div data-role="header" data-position="fixed">
         <a href="#panel-01" class="menuIcon ico fl">menu</a>
 
-        <h1 align="center">Red Hat Bank Application</h1>
+        <h1 align="center">Red Hat Bank</h1>
+        <span class="header-fullname">Welcome <span class="headerFullname"></span></span>
     </div>
 
     <div data-role="content" class="content" id="loggedInInfo">
@@ -106,9 +110,10 @@
         <a href="#panel-01" class="menuIcon ico fl">menu</a>
 
         <h1>Red Hat Bank</h1>
+        <span class="header-fullname">Welcome <span class="headerFullname"></span></span>
     </div>
     <div data-role="content">
-        <p>Your current balance is: <span id="amount">$amount</span> &pound;</p>
+        <p>Your current balance is: &pound;<span class="amount">$amount</span></p>
 
         <p>If you would like to make a transfer to a friend, please fill in the form below:</p>
 
@@ -141,7 +146,8 @@
     <div data-role="header" data-position="fixed">
         <a href="#home" data-icon="home" data-iconpos="notext">Back</a>
 
-        <h1>Red Hat Event</h1>
+        <h1>Red Hat Bank</h1>
+        <span class="header-fullname">Welcome <span class="headerFullname"></span></span>
     </div>
     <div data-role="content">
         <h2>User Profile</h2>

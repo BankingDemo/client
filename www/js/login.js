@@ -1,3 +1,10 @@
+function fillRepeatedFields(elementClassName, valueToFill) {
+	 var elements = document.getElementsByClassName(elementClassName)
+     for (var i = 0; i < elements.length; i++) {
+     	elements[i].innerHTML = valueToFill;
+     }
+}
+
 function doLogin() {
     var username = document.getElementById('username').value;
     document.getElementById('loggedInResponse').innerHTML = "<p>Logging you in " + username + "...</p>";
@@ -24,8 +31,10 @@ function doLogin() {
                 document.getElementById('surname').value = surname;
                 document.getElementById('address').value = address;
                 document.getElementById('email').value = email;
-                document.getElementById('amount').innerHTML = amount;
+                fillRepeatedFields('amount', amount);
                 document.getElementById('loggedInUsername').value = username;
+                //Need to process the multiple header panels
+                fillRepeatedFields('headerFullname', firstName + " " + surname);
                 document.getElementById('loggedInUserId').value = id;
 
                 //getTransactions for loggedIn user
@@ -40,12 +49,25 @@ function doLogin() {
                         if (getTxRes != '-1') {
                             $.each(getTxRes, function (idx, transaction) {
                                 tbody += "<tr>" +
-                                    "<td>" + transaction.fromid + "</td>" +
-                                    "<td>" + transaction.toId + "</td>" +
-                                    "<td>" + transaction.payee + "</td>" +
-                                    "<td>" + transaction.amount + "</td>" +
-                                    "<td>" + transaction.details + "</td>" +
-                                    "<td>" + transaction.txdate + "</td>" +
+                                	"<td>" + transaction.txdate + "</td>";
+                                    
+                                if (transaction.toId != -1 && transaction.toId != 99 && transaction.fromid != "-1") {
+                                	tbody += 
+                                    	"<td> Money sent to account: " + transaction.payee + "</td>" +
+                                    	"<td>" + transaction.details + "</td>";
+                                } else if (transaction.toId == 99) {
+                                	//Payment to some company should have toId 99
+                                	tbody += 
+                                		"<td>" + transaction.payee + "</td>" +
+                                		"<td> Payment</td>";
+                                } else {
+                                
+                                	tbody += "<td>" + transaction.payee + "</td>" +
+                                    "<td>" + transaction.details + "</td>";
+                                }
+
+                                tbody +=
+                                    "<td>&#163; " + parseFloat(Math.round(transaction.amount * 100) / 100).toFixed(2) + "</td>" +
                                     " </tr> \n";
                             });
                             document.getElementById('transactionsList').innerHTML = tbody;

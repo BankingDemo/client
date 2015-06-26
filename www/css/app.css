@@ -70,6 +70,23 @@ h4 {
 	width: 90px;
 }
 
+.header-fullname {
+	display:inline-block; 
+	position: absolute; 
+	top: 13px; 
+	right: 20px;
+}
+
+.balance-box {
+	color:white; 
+	border-radius: 10px;
+	text-shadow: 0 #fff;
+}
+
+th, td {
+	padding: 10px;
+}
+
 /* #app { */
 /*     width: inherit; */
 /*     height: inherit; */
