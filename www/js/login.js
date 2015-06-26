@@ -31,11 +31,13 @@ function doLogin() {
                 document.getElementById('surname').value = surname;
                 document.getElementById('address').value = address;
                 document.getElementById('email').value = email;
+                document.getElementById('accountNumber').value = "100-452-" + id;
                 fillRepeatedFields('amount', amount);
                 document.getElementById('loggedInUsername').value = username;
                 //Need to process the multiple header panels
                 fillRepeatedFields('headerFullname', firstName + " " + surname);
-                document.getElementById('loggedInUserId').value = id;
+                fillRepeatedFields('loggedInUserId', id);
+                //document.getElementById('loggedInUserId').value = id;
 
                 //getTransactions for loggedIn user
                 $fh.cloud(

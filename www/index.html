@@ -14,7 +14,7 @@
     <title>Red Hat Bank</title>
 </head>
 <body>
-<input type="hidden" id="loggedInUserId"/>
+<div style="display: none" class="loggedInUserId"></div>
 
 <div data-role="page" id="login">
 
@@ -43,10 +43,13 @@
     </div>
     <div data-role="content">
         <p>Welcome <span id="loggedInUser"></span>, all your transactions are loaded below:</p>
-        <table>
+        <table class="transactionsTable">
             <thead>
             <tr>
-            	<th colspan="4" align="center" class="rh-medium-red balance-box">Balance: &pound;<span class="amount">$amount</span></th>
+            	<th colspan="4" align="center" class="rh-medium-red balance-box">
+            		Account: 100-452-<span class="loggedInUserId">$id</span></br>
+            		Balance: &pound;<span class="amount">$amount</span>
+            	</th>
             </tr>
             <tr>
                 <th>Date</th>
@@ -113,30 +116,44 @@
         <span class="header-fullname">Welcome <span class="headerFullname"></span></span>
     </div>
     <div data-role="content">
-        <p>Your current balance is: &pound;<span class="amount">$amount</span></p>
-
-        <p>If you would like to make a transfer to a friend, please fill in the form below:</p>
-
-        <p><label for="recipient-account">Recipient Account</label></p>
-
-        <p>
-        <table>
+    
+    	<table>
+            <thead>
             <tr>
-                <td><input type="text" readonly value="100-452-" id="recipient-account-boilerplate"/></td>
-                <td><input type="number" size="2" maxlength="2" id="recipient-account" value=""/></td>
+            	<th colspan="3" align="center" class="rh-medium-red balance-box">Balance: &pound;<span class="amount">$amount</span></th>
             </tr>
-        </table>
-        <p><label for="how-much">How much do you want to transfer?</label></p>
-        <table>
+            </thead>
+            <tbody>
             <tr>
-                <td><input type="number" id="how-much" maxlength="6"/></td>
-                <td>.</td>
+            	<td colspan="3">Transfer from</td>
+            </tr>
+            <tr class="grayRow">
+            	<td>Account</td><td colspan="2">100-452-<span class="loggedInUserId">$id</span></td>
+            </tr>
+            <tr>
+            	<td colspan="3">Payment to</td>
+            </tr>
+            <tr class="grayRow">
+            	<td>Recipient</br>Account</td>
+            	<td><input type="text" readonly value="100-452-" id="recipient-account-boilerplate"/></td>
+            	<td><input type="number" size="2" maxlength="2" id="recipient-account" value=""/></td>
+            </tr>
+            <tr>
+            	<td colspan="3">Amount</td>
+            </tr>
+            <tr class="grayRow">
+            	<td style="font-size: 24px;">&pound;</td>
+            	<td><input type="number" id="how-much" maxlength="6"/></td>
                 <td><input type="number" id="how-much-cents" value="00"/></td>
             </tr>
+            <tr>
+            	<td colspan="3">
+            		<button type="submit" id="do_transfer" onclick="doTransfer();" data-icon="check" data-iconpos="right" data-inline="true">Transfer</button>
+            	</td>
+            </tr>
+            </tbody>
         </table>
-        <p></p>
-        <button type="submit" id="do_transfer" onclick="doTransfer();" data-icon="check" data-iconpos="right" data-inline="true">Transfer
-        </button>
+        
 
         <span id="transferInfo"></span>
     </div>
@@ -165,13 +182,9 @@
             <input type="text" id="email" readonly/>
             <label for="loggedInUsername">Username</label>
             <input type="text" id="loggedInUsername" readonly/>
+            <label for="accountNumber">Account Number</label>
+            <input type="text" id="accountNumber" readonly/>
         </div>
-        <div>
-            <div>
-
-            </div>
-        </div>
-
     </div>
 </div>
 

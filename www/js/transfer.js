@@ -1,6 +1,6 @@
 function doTransfer() {
 
-    var fromId = document.getElementById('loggedInUserId').value;
+    var fromId = document.getElementsByClassName('loggedInUserId')[0].innerHTML;
     var toId = document.getElementById('recipient-account').value;
 
     var amount = +document.getElementById('how-much').value + +(document.getElementById('how-much-cents').value / 100);

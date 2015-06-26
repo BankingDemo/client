@@ -94,6 +94,18 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+.grayRow {
+	background-color: lightgray;
+}
+
+.transactionsTable tr:nth-child(odd) {
+	background-color: lightgray;
+}
+
+.transactionsTable tr:nth-child(0), tr:nth-child(1) {
+	background-color: white;
+}
+
 /* #app { */
 /*     width: inherit; */
 /*     height: inherit; */
