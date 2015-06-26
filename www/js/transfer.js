@@ -7,6 +7,10 @@ function doTransfer() {
 
     var payee = document.getElementById('recipient-account-boilerplate').value + toId;
     //alert("fromId:" + fromId + " toId:" + toId + " amount:" + amount + " payee:" + payee);
+    
+    if (fromId == toId) {
+    	 document.getElementById('transferInfo').innerHTML = "<p>You cannot transfer from and to the same account.</p>";
+    } else {
 
     $fh.cloud(
         {
@@ -28,4 +32,5 @@ function doTransfer() {
             alert('Cloud call failed with error message:' + msg + '. Error properties:' + JSON.stringify(err));
         }
     );
+    }
 }

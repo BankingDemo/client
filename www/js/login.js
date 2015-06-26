@@ -37,8 +37,7 @@ function doLogin() {
                 //Need to process the multiple header panels
                 fillRepeatedFields('headerFullname', firstName + " " + surname);
                 fillRepeatedFields('loggedInUserId', id);
-                //document.getElementById('loggedInUserId').value = id;
-
+                
                 //getTransactions for loggedIn user
                 $fh.cloud(
                     {
@@ -48,29 +47,57 @@ function doLogin() {
                     },
                     function (getTxRes) {
                         var tbody = "";
+                        var operation = "";
+
                         if (getTxRes != '-1') {
                             $.each(getTxRes, function (idx, transaction) {
+                            	
+                            	var decimalAmount = parseFloat(Math.round(transaction.amount * 100) / 100).toFixed(2);
+                            
                                 tbody += "<tr>" +
                                 	"<td>" + transaction.txdate + "</td>";
                                     
-                                if (transaction.toId != -1 && transaction.toId != 99 && transaction.fromid != "-1") {
+                                if (transaction.toId != -1 && transaction.toId != id && transaction.toId != 99 && transaction.fromid != "-1") {
                                 	tbody += 
                                     	"<td> Money sent to account: " + transaction.payee + "</td>" +
                                     	"<td>" + transaction.details + "</td>";
+                                	
+                                	operation = "-";
+                                } else if (transaction.toId != -1 && transaction.toId == id && transaction.toId != 99 && transaction.fromid != "-1") {
+                                	tbody += 
+                                    	"<td> Money received from account: " + transaction.payee + "</td>" +
+                                    	"<td>" + transaction.details + "</td>";
+                                	
+                                	operation = "+";
                                 } else if (transaction.toId == 99) {
                                 	//Payment to some company should have toId 99
                                 	tbody += 
                                 		"<td>" + transaction.payee + "</td>" +
                                 		"<td> Payment</td>";
+                                	
+                                	operation = "-";
                                 } else {
                                 
                                 	tbody += "<td>" + transaction.payee + "</td>" +
                                     "<td>" + transaction.details + "</td>";
                                 }
+                                
+                                if (transaction.toId == -1) {
+                                	operation = "-";
+                                } else if (transaction.fromid == -1 && transaction.toId == id) {
+                                	operation = "+";
+                                }
 
-                                tbody +=
-                                    "<td>&#163; " + parseFloat(Math.round(transaction.amount * 100) / 100).toFixed(2) + "</td>" +
-                                    " </tr> \n";
+                                if (operation == "+") {
+                                	tbody +=
+                                		"<td>&#163; +" + decimalAmount + "</td><td></td>" +
+                                        " </tr> \n";
+                                } else {
+                                	tbody +=
+                                        "<td></td><td>&#163; -" + decimalAmount + "</td>" +
+                                        " </tr> \n";
+                                }
+                                
                             });
                             document.getElementById('transactionsList').innerHTML = tbody;
                             window.location.replace('#home');
