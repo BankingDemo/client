@@ -11,6 +11,7 @@
     <script src="feedhenry.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/transfer.js"></script>
+    <script type="text/javascript" src="js/doSaveCustomerDetails.js"></script>
     <title>Red Hat Bank</title>
 </head>
 <body>
@@ -187,13 +188,16 @@
             <input type="text" id="surname" readonly/>
             <label for="address">Address</label>
             <input type="text" id="address" readonly/>
-            <label for="surname">Email</label>
+            <label for="email">Email</label>
             <input type="text" id="email" readonly/>
             <label for="loggedInUsername">Username</label>
             <input type="text" id="loggedInUsername" readonly/>
             <label for="accountNumber">Account Number</label>
             <input type="text" id="accountNumber" readonly/>
+            
+            <button type="submit" id="do_save" onclick="doSaveCustomerDetails();" data-icon="check" data-iconpos="right" data-inline="true">Save Details</button>
         </div>
+        <span id="saveInfo"></span>
     </div>
 </div>
 

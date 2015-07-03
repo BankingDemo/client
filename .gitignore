@@ -11,6 +11,7 @@ node_modules/
 .settings
 .project
 .classpath
+.tern-project
 RemoteSystemsTempFiles
 
 # General Java Folders #
