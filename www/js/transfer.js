@@ -14,7 +14,7 @@ function doTransfer() {
 
     $fh.cloud(
         {
-            "path": '/cloud/transferMoney?fromId=' + fromId + "&toId=" + toId + "&amount=" + amount + "&payee=" + payee,
+            "path": '/cloud/transferMoney?fromId=' + fromId + "&payee=" + toId + "&amount=" + amount,
             "contentType": "application/json",
             "method": "GET"
         },
