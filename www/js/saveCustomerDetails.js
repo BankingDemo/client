@@ -6,10 +6,11 @@ function doSaveCustomerDetails() {
 	var email = document.getElementById('email').value;
 	var username = document.getElementById('username').value;
 	
+	alert("in here");
 	$fh.cloud(
 	        {
-	            "path": '/cloud/getBackendData?method=POST&id=' + id + '&restpath=savecustomerdetails' + 
-	            '&id=' + custId + "&firstName=" + firstName + "&surname=" + surname + "&address=" + address +
+	            "path": '/cloud/saveCustDetails?' + 
+	            'id=' + custId + "&firstName=" + firstName + "&surname=" + surname + "&address=" + address +
 	            "&email=" + email + "&username=" + username,
 	            "contentType": "application/json",
 	            "method": "GET"
