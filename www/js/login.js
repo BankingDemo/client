@@ -50,23 +50,23 @@ function loadTransactions(id) {
                     tbody += "<tr>" +
                     	"<td>" + transaction.txdate + "</td>";
                         
-                    if (transaction.toId != -1 && transaction.toId != id && transaction.toId != 99 && transaction.fromid != "-1") {
+                    if (transaction.payee != -1 && transaction.payee != id && transaction.payee != 99 && transaction.fromid != "-1") {
                     	tbody += 
                         	"<td> Money sent to account: " + transaction.payee + "</td>" +
                         	"<td>" + transaction.details + "</td>";
                     	
                     	operation = "-";
-                    } else if (transaction.toId != -1 && transaction.toId == id && transaction.toId != 99 && transaction.fromid != "-1") {
+                    } else if (transaction.payee == id && transaction.fromid != null) {
                     	tbody += 
-                        	"<td> Money received from account: " + transaction.payee + "</td>" +
+                        	"<td>Money received from account: " + transaction.payee + "</td>" +
                         	"<td>" + transaction.details + "</td>";
                     	
                     	operation = "+";
-                    } else if (transaction.toId == 99) {
-                    	//Payment to some company should have toId 99
+                    } else if (transaction.payee == id && transaction.fromid == null) {
+                    	//Deposit
                     	tbody += 
-                    		"<td>" + transaction.payee + "</td>" +
-                    		"<td> Payment</td>";
+                    		"<td>Employee Cash bonus</td>" +
+                    		"<td>Deposit</td>";
                     	
                     	operation = "-";
                     } else {
