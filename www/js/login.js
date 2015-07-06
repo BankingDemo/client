@@ -9,7 +9,7 @@ function getCurrentBalance(id) {
 	//getTransactions for loggedIn user
     $fh.cloud(
         {
-            "path": '/cloud/getBackendData?method=get&id=' + id + '&restpath=getcurrentbalance',
+            "path": '/cloud/getCurrentBalance?id=' + id,
             "contentType": "application/json",
             "method": "GET"
         },
