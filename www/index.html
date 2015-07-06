@@ -16,6 +16,14 @@
 <body>
 <div style="display: none" class="loggedInUserId"></div>
 
+    
+<script type="text/javascript">
+	var loggedInUserId = document.getElementsByClassName('loggedInUserId')[0].innerHTML;
+	if (loggedInUserId = " ") {
+		window.location.replace('#login');
+	}
+</script>
+
 <div data-role="page" id="login">
 
     <div data-role="header">
