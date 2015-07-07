@@ -1,3 +1,7 @@
+window.shouldRotateToOrientation = function(degrees) {
+ return true;
+}
+
 function fillRepeatedFields(elementClassName, valueToFill) {
 	 var elements = document.getElementsByClassName(elementClassName)
      for (var i = 0; i < elements.length; i++) {
