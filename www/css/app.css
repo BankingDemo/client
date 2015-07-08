@@ -106,8 +106,11 @@ input::-webkit-inner-spin-button {
 	background-color: transparent;
 }
 
-table {
-	width: 100%;
+@media only screen 
+and (min-device-width : 568px) {
+	table {
+		width: 60%;
+	}
 }
 
 /* iPhone specific style */
@@ -115,6 +118,10 @@ table {
 and (max-device-width : 568px)
 and (orientation : portrait) 
 { /*  and (min-device-width : 320px) */ 
+
+	table {
+		width: 100%;
+	}
 
 	span.header-fullname { display: none; }
 	

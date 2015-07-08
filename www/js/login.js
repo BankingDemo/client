@@ -2,6 +2,17 @@ window.shouldRotateToOrientation = function(degrees) {
  return true;
 }
 
+function logOff() {
+	if(confirm("Confirm log off")) {
+		fillRepeatedFields('loggedInUserId', "");
+		document.getElementById('username').value = "";
+		window.location.replace('#login');
+	} else {
+		
+	}
+		
+}
+
 function fillRepeatedFields(elementClassName, valueToFill) {
 	 var elements = document.getElementsByClassName(elementClassName)
      for (var i = 0; i < elements.length; i++) {
