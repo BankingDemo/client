@@ -50,6 +50,7 @@ function loadTransactions(id) {
                 $.each(getTxRes, function (idx, transaction) {
                 	
                 	var decimalAmount = parseFloat(Math.round(transaction.amount * 100) / 100).toFixed(2);
+                	//alert("from: [" + transaction.fromid + "] -- payee: [" + transaction.payee + "]");
                 
                     tbody += "<tr>" +
                     	"<td>" + transaction.txdate + "</td>";
@@ -72,7 +73,7 @@ function loadTransactions(id) {
                     		"<td>Employee Cash bonus</td>" +
                     		"<td>Deposit</td>";
                     	
-                    	operation = "-";
+                    	operation = "+";
                     } else {
                     
                     	tbody += "<td>" + transaction.payee + "</td>" +
