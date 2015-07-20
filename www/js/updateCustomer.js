@@ -17,18 +17,12 @@ function doUpdateCustomer() {
         "email": email
       }
     },
-    function(getSaveRes) {
-      if (getSaveRes == '-1') {
-        document.getElementById('saveInfo').innerHTML = "<p>Your details could not be updated.</p>";
-      } else {
-        document.getElementById('saveInfo').innerHTML = "<p>Your details were updated successfully.</p>";
-        doLogin();
-      }
-
+    function(res) {
+      document.getElementById('saveInfo').innerHTML = "<p>Your details were updated successfully.</p>";
+      doLogin();
     },
-    function(getSaveMsg, getBalErr) {
-      // An error occured during the cloud call. Alert some debugging information
-      alert('Cloud call failed with error message:' + getSaveMsg + '. Error properties:' + JSON.stringify(getSaveMsg));
+    function(msg, err) {
+      document.getElementById('saveInfo').innerHTML = "<p>Your details could not be updated.</p>";
     }
   );
 }
