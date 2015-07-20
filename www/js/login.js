@@ -63,16 +63,16 @@ function loadTransactions(id) {
             tbody +=
               "<td>Money sent to account: " + transaction.payee + "</td>" +
               "<td>" + transaction.details + "</td>" +
-              "<td>&#163;" + decimalAmount + "</td>" +
               "<td></td>" +
+              "<td>&#163;" + decimalAmount + "</td>" +
               "</tr>\n";
 
           } else {
             tbody +=
               "<td>Money received from account: " + transaction.fromid + "</td>" +
               "<td>" + transaction.details + "</td>" +
-              "<td></td>" +
               "<td>&#163;" + decimalAmount + "</td>" +
+              "<td></td>" +
               "</tr>\n";
           }
         });
