@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css"/>
     <link rel="stylesheet" href="css/app.css"/>
+    
+    <link rel="shortcut icon" href="/BankingDemo-BankingDemo-client/www/img/favicon.ico" type="image/x-icon" />
 
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
@@ -17,10 +19,18 @@
 <body>
 <div style="display: none" class="loggedInUserId"></div>
 
+    
+<script type="text/javascript">
+	var loggedInUserId = document.getElementsByClassName('loggedInUserId')[0].innerHTML;
+	if (loggedInUserId = " ") {
+		window.location.replace('#login');
+	}
+</script>
+
 <div data-role="page" id="login">
 
     <div data-role="header">
-        <h1 align="center">Red Hat Bank Application</h1>
+        <h1 align="center">Red Hat Bank</h1>
     </div>
 
     <table>
@@ -88,6 +98,7 @@
 
         <ul data-role="listview" data-theme="a">
             <li><a href="#settings">User Profile</a></li>
+            <li><a href="javascript:logOff();">Log off</a></li>
         </ul>
     </div>
 
@@ -117,6 +128,7 @@
 
         <ul data-role="listview" data-theme="a">
             <li><a href="#settings">User Profile</a></li>
+            <li><a href="javascript:logOff();">Log off</a></li>
         </ul>
     </div>
     <div data-role="header" data-position="fixed">

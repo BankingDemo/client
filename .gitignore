@@ -26,6 +26,7 @@ logs/
 # General #
 tmp/
 *.tmp
+.DS_Store
 
 _error
 

@@ -1,3 +1,18 @@
+window.shouldRotateToOrientation = function(degrees) {
+ return true;
+}
+
+function logOff() {
+	if(confirm("Confirm log off")) {
+		fillRepeatedFields('loggedInUserId', "");
+		document.getElementById('username').value = "";
+		window.location.replace('#login');
+	} else {
+		
+	}
+		
+}
+
 function fillRepeatedFields(elementClassName, valueToFill) {
 	 var elements = document.getElementsByClassName(elementClassName)
      for (var i = 0; i < elements.length; i++) {
@@ -9,7 +24,7 @@ function getCurrentBalance(id) {
 	//getTransactions for loggedIn user
     $fh.cloud(
         {
-            "path": '/cloud/getBackendData?method=get&id=' + id + '&restpath=getcurrentbalance',
+            "path": '/cloud/getCurrentBalance?id=' + id,
             "contentType": "application/json",
             "method": "GET"
         },
@@ -46,29 +61,30 @@ function loadTransactions(id) {
                 $.each(getTxRes, function (idx, transaction) {
                 	
                 	var decimalAmount = parseFloat(Math.round(transaction.amount * 100) / 100).toFixed(2);
+                	//alert("from: [" + transaction.fromid + "] -- payee: [" + transaction.payee + "]");
                 
                     tbody += "<tr>" +
                     	"<td>" + transaction.txdate + "</td>";
                         
-                    if (transaction.toId != -1 && transaction.toId != id && transaction.toId != 99 && transaction.fromid != "-1") {
+                    if (transaction.payee != -1 && transaction.payee != id && transaction.payee != 99 && transaction.fromid != "-1") {
                     	tbody += 
                         	"<td> Money sent to account: " + transaction.payee + "</td>" +
                         	"<td>" + transaction.details + "</td>";
                     	
                     	operation = "-";
-                    } else if (transaction.toId != -1 && transaction.toId == id && transaction.toId != 99 && transaction.fromid != "-1") {
+                    } else if (transaction.payee == id && transaction.fromid != null) {
                     	tbody += 
-                        	"<td> Money received from account: " + transaction.payee + "</td>" +
+                        	"<td>Money received from account: " + transaction.payee + "</td>" +
                         	"<td>" + transaction.details + "</td>";
                     	
                     	operation = "+";
-                    } else if (transaction.toId == 99) {
-                    	//Payment to some company should have toId 99
+                    } else if (transaction.payee == id && transaction.fromid == null) {
+                    	//Deposit
                     	tbody += 
-                    		"<td>" + transaction.payee + "</td>" +
-                    		"<td> Payment</td>";
+                    		"<td>Employee Cash bonus</td>" +
+                    		"<td>Deposit</td>";
                     	
-                    	operation = "-";
+                    	operation = "+";
                     } else {
                     
                     	tbody += "<td>" + transaction.payee + "</td>" +
